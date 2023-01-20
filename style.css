@@ -1,0 +1,15 @@
+#chart_div{
+    width:auto;
+    height:600px;
+}
+.container{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items:center;
+}
+.item{
+    width:10px;
+    heigth: 10%;
+    background-color: blue;
+}
