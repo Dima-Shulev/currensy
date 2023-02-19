@@ -1,0 +1,26 @@
+{
+    "Mysql": {
+      "host": "draw_db",
+      "user": "root",
+      "pass": "example",
+      "db": "draw_db",
+      "port": "3309",
+      "charset": "utf8"
+    },
+    "PostgreSql": {
+      "host": "draw_db",
+      "user": "root",
+      "pass": "example",
+      "db": "draw_db",
+      "port": "3309",
+      "charset": "utf8"
+    },
+    "MongoDB": {
+      "host": "draw_db",
+      "user": "root",
+      "pass": "example",
+      "db": "draw_db",
+      "port": "3309",
+      "charset": "utf8"
+    }
+}

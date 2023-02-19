@@ -1,0 +1,27 @@
+{
+    "name": "root/html",
+    "authors": [
+        {
+            "name": "ЕTestUser"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "nette/database": "v3.1.6",
+        "ext-pdo": ">=4",
+        "nette/caching": "^3.0",
+        "nette/utils": "^3.2.1",
+        "walkor/workerman": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Public\\": "public/",
+            "Connect\\": "connect/"
+        }
+    },
+    "script": {
+        "post-update-cmd":[
+            "@php clienr.php start"
+        ]
+    }
+}
