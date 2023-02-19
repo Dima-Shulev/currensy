@@ -1,0 +1,14 @@
+#chart_div{
+    width:50%;
+    height:50%;
+    border:1px solid #000000;
+    border-radius: 10px;
+    margin-left:20px;
+}
+
+.container{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items:center;
+}
