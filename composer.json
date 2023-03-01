@@ -18,10 +18,5 @@
             "Public\\": "public/",
             "Connect\\": "connect/"
         }
-    },
-    "script": {
-        "post-update-cmd":[
-            "@php clienr.php start"
-        ]
     }
 }
