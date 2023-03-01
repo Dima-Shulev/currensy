@@ -4,30 +4,19 @@ namespace Connect;
 
 use PDO;
 
-class InsertDb extends PDOConfig
-{
-    public function __construct($table){
-        parent::__construct();
-        $this->table = $table;
+class InsertDb{
+    private $connect;
+    protected $query;
+    protected $result;
+
+    public function __construct(){
     }
 
-    /*public function insertDataBaseFetch($sql,$arr){
-        $this->query = $this->conn->prepare($sql);
-        $this->query->execute($arr);
-
+    public function getPrepareSql($sql){
+        $this->connect = new PDOConfig();
+        $this->query = $this->connect->PDO->prepare($sql);
+        $this->query->execute();
         $this->result = $this->query->fetch(PDO::FETCH_ASSOC);
         return $this->result;
     }
-    */
-    public function getInsertFetch($sql,$arr){
-        $result = $this->executeDb($sql,$arr)->fetch(PDO::FETCH_ASSOC);
-        return (!$result) ? false : $result;
-    }
-
-    public function getInsertFetchAll($sql,$arr){
-        $result = $this->executeDb($sql,$arr)->fetchAll(PDO::FETCH_ASSOC);
-        return (!$result) ? false : $result;
-    }
-
 }
-
