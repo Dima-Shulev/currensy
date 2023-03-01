@@ -3,29 +3,20 @@
 namespace Connect;
 
 use PDO;
-use Connect\InsertDb;
 
-class SelectDb extends PDOConfig
-{
-    public $id;
-    public $column;
+class SelectDb{
+    private $connect;
+    protected $query;
+    protected $result_fetch;
 
-    public function __construct($table){
-        parent::__construct();
-        $this->table = $table;
+    public function __construct(){
     }
 
-    public function getSelectFetch($sql,$arr){
-        $result = $this->executeDb($sql,$arr)->fetch(PDO::FETCH_ASSOC);
-        return (!$result) ? false : $result;
-    }
-
-    public function getSelectFetchAll($sql,$arr){
-        $result = $this->executeDb($sql,$arr)->fetchAll(PDO::FETCH_ASSOC);
-        return (!$result) ? false : $result;
+    public function getPrepareSql($sql){
+        $this->connect = new PDOConfig();
+        $this->query = $this->connect->PDO->prepare($sql);
+        $this->query->execute();
+        $this->result_fetch = $this->query->fetch(PDO::FETCH_ASSOC);
+        return $this->result_fetch;
     }
 }
-
-
-
-
